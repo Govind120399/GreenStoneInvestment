@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIP Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Website Logo" />
+                  </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mutual-funds.html">Mutual Funds</a></li>
+                <li><a href="index.html#contact">Plan Now</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <!-- <li><a href="sip-calculator.html">SIP Calculator</a></li>
+                <li><a href="lumpsum-calculator.html">Lump-Sum Calculator</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SIP Calculator -->
+        <section class="calculator">
+            <h1>SIP Calculator</h1>
+            <div class="calculator-container">
+                <!-- Left Card: Inputs -->
+                <div class="input-card">
+                    <!-- Inputs -->
+                    <div class="input-section">
+                        <div class="input-group">
+                            <label>Monthly Investment (₹):</label>
+                            <input type="number" id="monthlyInvestment" min="100" max="1000000" value="25000">
+                            <input type="range" id="monthlyInvestmentSlider" min="100" max="1000000" value="25000">
+                        </div>
+                        <div class="input-group">
+                            <label>Expected Return Rate (p.a):</label>
+                            <input type="number" id="expectedReturn" min="1" max="30" value="12">
+                            <input type="range" id="expectedReturnSlider" min="1" max="30" value="12">
+                        </div>
+                        <div class="input-group">
+                            <label>Time Period (Years):</label>
+                            <input type="number" id="timePeriod" min="1" max="40" value="10">
+                            <input type="range" id="timePeriodSlider" min="1" max="40" value="10">
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="results-section">
+                        <div class="result">
+                            <span>Invested Amount:</span>
+                            <span id="investedAmount">₹30,00,000</span>
+                        </div>
+                        <div class="result">
+                            <span>Est. Returns:</span>
+                            <span id="estimatedReturns">₹26,00,897</span>
+                        </div>
+                        <div class="result">
+                            <span>Total Value:</span>
+                            <span id="totalValue">₹56,00,897</span>
+                            
+                        </div>
+                    </div>
+                    <!-- Invest Now Button -->
+                    <div class="invest-now-button">
+                        <a href="index.html#contact" class="cta-button primary">Invest Now <i class="fas fa-arrow-right"></i></a>
+                    </div>   
+                </div>
+
+                <!-- Right Card: Pie Chart -->
+                <div class="chart-card">
+                    <div class="pie-chart">
+                        <svg width="200" height="200" viewBox="-100 -100 200 200">
+                            <!-- Background Circle (Grey) -->
+                            <circle cx="0" cy="0" r="90" fill="transparent" stroke="#E0E0E0" stroke-width="20"></circle>
+                            <!-- Invested Amount (Green) -->
+                            <circle cx="0" cy="0" r="90" fill="transparent" stroke="#A8A8A8" stroke-width="20" stroke-dasharray="0 282.74"></circle>
+                            <!-- Est. Returns (Dark Green) -->
+                            <circle cx="0" cy="0" r="90" fill="transparent" stroke="#1E8E3E" stroke-width="20" stroke-dasharray="0 282.74"></circle>
+                        </svg>
+                        <div class="chart-labels">
+                            <div><span class="chip grey"></span> Invested Amount</div>
+                            <div><span class="chip dark-green"></span> Est. Returns</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    
+                    <span>GreenStoneInvestment</span>
+                </div>
+                <p class="hero-slogan">"SIP karo, sapno ko sach karo"</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mutual-funds.html">Mutual Funds</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 301 Vinayak apt, MG road , Kandivali (w), Mumbai 400067</li>
+                    <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                    <li><i class="fas fa-envelope"></i> info@GreenStoneInvestment.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 GreenStoneInvestment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>

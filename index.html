@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenStoneInvestment</title>
+    <meta name="description" content="Invest in mutual funds, SIPs, and lump-sum investments for long-term wealth creation">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="sticky-header">
+        <nav>
+          <div class="logo">
+            <a href="index.html">
+                <img src="images/logo.png" alt="Website Logo" />
+            </a>
+        </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="mutual-funds.html">Mutual Funds</a></li>
+                <li><a href="index.html#contact">Plan Now</a></li>
+                <li><a href="calculator.html">Calculator</a></li>
+                <!-- <li><a href="lumpsum-calculator.html">Lump-Sum Calculator</a></li> -->
+                <!-- <li><a href="#" class="login-btn">Login <i class="fas fa-user"></i></a></li> -->
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" style="background-image: url('images/investment.jpg');">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Smart Investing Made Simple</h1>
+                <p class="subtitle">Start your wealth creation journey with expert-curated mutual funds and investment tools</p>
+                <p class="hero-slogan">"SIP karo, sapno ko sach karo"</p>
+                <div class="hero-buttons">
+                    <a href="mutual-funds.html" class="cta-button primary">Explore Funds <i class="fas fa-arrow-right"></i></a>
+                    <a href="Calculator.html" class="cta-button primary">Calculate Returns</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <h2 class="section-title">Why Choose GreenStoneInvestment?</h2>
+            <p class="section-subtitle">Aim To Grow Your Wealth By Investing In Mutual Funds</p>
+            
+            <div class="why-us-content">
+                <div class="why-us-text">
+                    <p>Imagine yourself hiring a professional to manage your savings wisely, sounds intriguing? But it can be an expensive affair too! Also, entrusting someone with your money is quite tricky. This is where Mutual Funds come in handy. We have experienced team handling and choosing best funds suitable for you as per your needs and requirements. We at greenstone investment maintain personal touch by one on one counselling with all our clients.</p>
+                </div>
+            </div>
+            
+            <div class="features-grid">
+                <!-- Row 1 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Experienced Professionals</h3>
+                    <p>Our team of seasoned experts with years of market experience manages your investments.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Expert Advice</h3>
+                    <p>Benefit from our in-depth market research and strategic investment insights.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Hassle Free Process</h3>
+                    <p>Simple documentation and seamless onboarding for stress-free investing.</p>
+                </div>
+                
+                <!-- Row 2 -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Transparency</h3>
+                    <p>Clear reporting and complete visibility into your investments at all times.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Real Time Estimations</h3>
+                    <p>Track your portfolio performance with up-to-date valuations and projections.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Assistance</h3>
+                    <p>Round-the-clock support to address all your investment queries and concerns.</p>
+                </div>
+            </div>
+            
+            <div class="video-container">
+              <iframe 
+                  src="https://drive.google.com/file/d/1As5K5xCELOA0cZgBcFH-3gLMmmdidoFD/preview" 
+                  allow="autoplay" 
+                  frameborder="0">
+              </iframe>
+          </div>
+        </section>
+        <!-- Fund Categories -->
+        <section class="fund-categories">
+            <h2 class="section-title">Explore Investment Options</h2>
+            <p class="section-subtitle">Choose from our carefully selected fund categories</p>
+            <div class="category-tiles">
+                <!-- Equity Funds -->
+                <div class="category-tile equity" style="background-image: url('images/equity.jpg');">
+                    <div class="tile-content">
+                        <h3>Tax-Saving (ELSS)</h3>
+                        <p>Equity-linked savings schemes with tax benefits</p>
+                        <a href="mutual-funds.html#equity" class="tile-link">Explore <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <!-- Debt Funds -->
+                <div class="category-tile debt" style="background-image: url('images/debt.jpg');">
+                    <div class="tile-content">
+                        <h3>Debt Funds</h3>
+                        <p>Stable returns through fixed income securities</p>
+                        <a href="mutual-funds.html#debt" class="tile-link">Explore <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <!-- Hybrid Funds -->
+                <div class="category-tile hybrid" style="background-image: url('images/hybrid.jpg');">
+                    <div class="tile-content">
+                        <h3>Hybrid Funds</h3>
+                        <p>Balanced approach with mix of equity and debt</p>
+                        <a href="mutual-funds.html#hybrid" class="tile-link">Explore <i class="fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <h2 class="section-title">What Our Investors Say</h2>
+            <div class="testimonial-slider">
+              <!-- Existing Testimonial 1 -->
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>
+                    "My experience with Greenstone investments has been excellent. They took the time to understand my goals and provided personalized investment strategies. The team is always communicative and transparent, making me feel confident in my financial decisions. I highly recommend Greenstone investment for anyone looking for trusted investment guidance."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-name">Ronak Mehta</div>
+                  <div class="author-details">Investor since 2019</div>
+                </div>
+              </div>
+          
+              <!-- Existing Testimonial 2 -->
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                  </div>
+                  <p>
+                    "I’ve had an outstanding experience with Greenstone investments. From the start, they took the time to understand my financial goals and tailored an investment plan that suits my needs. The team is knowledgeable, approachable, and always proactive in keeping me informed about my portfolio’s performance. Their transparency and clear communication make me feel confident in my financial decisions. Thanks to their expertise, I’m seeing positive growth and feel secure about my financial future. I highly recommend Greenstone investments to anyone seeking reliable investment advice."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-name">Amisha Khakhar</div>
+                  <div class="author-details">Investor since 2020</div>
+                </div>
+              </div>
+          
+              <!-- New Testimonial 1 -->
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>
+                    "My experience with Greenstone investments has been excellent. They took the time to understand my financial goals and created a personalized investment strategy. The team is transparent, responsive, and always keeps me informed. Thanks to their expertise, I’m confident in my financial future and highly recommend them."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-name">Sanjay Goel</div>
+                  <div class="author-details">Investor</div>
+                </div>
+              </div>
+          
+              <!-- New Testimonial 2 -->
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>
+                    "When it comes to financial investments, being able to trust the platform is a big deal. Greenstone investment is transparent and data-based. It’s a lot easier to trust Greenstone investments."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-name">Dipenshu Patel</div>
+                  <div class="author-details">Investor</div>
+                </div>
+              </div>
+          
+              <!-- New Testimonial 3 -->
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>
+                    "Greenstone investments is a great platform for investment. Interactive and clean User Interface. Features like creating your own portfolio are great. I started investing in MF due to Greenstone investments only. Very responsive Support team. Always available to help for any query."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-name">Nirmala Acharya</div>
+                  <div class="author-details">Investor</div>
+                </div>
+              </div>
+          
+              <!-- New Testimonial 4 -->
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>
+                    "When I came across Greenstone investment, I found it much much easier to understand because of user-friendly design and much easier to operate in selecting funds and making investments. The cherry on top, I got advice from the team not only as an expert but as a friend who understands risk-taking capacity and paying capacity."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-name">Aurbindo Roy</div>
+                  <div class="author-details">Investor</div>
+                </div>
+              </div>
+          
+              <!-- New Testimonial 5 -->
+              <div class="testimonial-card">
+                <div class="testimonial-content">
+                  <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p>
+                    "As a housewife and not so aware about the stock market, it was very difficult for me to save. I was following the same old way of hiding savings in a dabba like most Indian women. Thanks to an awareness program by Greenstone investments where I got to know, learn more about easy investment options. They are very professional and very calm. They provided one-on-one counseling. I am very happy with my investments and I request you should consult them once."
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-name">Jaya Sinha</div>
+                  <div class="author-details">Investor</div>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Begin Your Investment Journey</h2>
+                <p class="section-intro">Request course information or schedule a consultation with our admissions team</p>
+                
+                <section>
+                  <form id="contact-form" action="/api/sendEmail" method="POST" class="contact-form">
+                    <div class="form-group">
+                      <label for="name">Full Name</label>
+                      <input type="text" id="name" name="name" required placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                      <label for="email">Email Address</label>
+                      <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                      <label for="phone">Phone Number (optional)</label>
+                      <input type="tel" id="phone" name="phone" placeholder="Enter your phone">
+                    </div>
+                    <div class="form-group">
+                      <label for="interest">Primary Interest</label>
+                      <select id="interest" name="interest" required>
+                        <option value="">Select an option</option>
+                        <option value="financial-literacy">Free Portfolio Analysis</option>
+                        <option value="chart-analysis">SIP Consultation</option>
+                        <option value="basics-for-delta">SWP Consultation</option>
+                        <option value="delta-trading-pro">Retirement Planning</option>
+                        <option value="mutual-funds">Lump Sum Investment</option>
+                        <option value="consultation">Free Consultation</option>
+                        <option value="other">Other Inquiry</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="experience">Current Investment Experience</label>
+                      <select id="experience" name="experience">
+                        <option value="">Select your level</option>
+                        <option value="beginner">Beginner (just starting)</option>
+                        <option value="intermediate">Intermediate (some experience)</option>
+                        <option value="advanced">Advanced (experienced investor)</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="message">Your Message</label>
+                      <textarea id="message" name="message" placeholder="Tell us about your investment goals and any questions"></textarea>
+                    </div>
+                    <div class="form-submit">
+                      <button type="submit" class="btn btn-accent">Submit Request</button>
+                    </div>
+                  </form>
+                
+                  <!-- Placeholder for success/error messages -->
+                  <div id="form-message"></div>
+                </section>
+                
+                <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                  const form = document.getElementById('contact-form');
+                  const messageDiv = document.getElementById('form-message');
+                
+                  form.addEventListener('submit', async (event) => {
+                    event.preventDefault(); // Prevent the default form submission
+                
+                    // Get form data
+                    const formData = new FormData(form);
+                    const data = {
+                      name: formData.get('name'),
+                      email: formData.get('email'),
+                      phone: formData.get('phone'),
+                      interest: formData.get('interest'),
+                      experience: formData.get('experience'),
+                      message: formData.get('message')
+                    };
+                
+                    try {
+                      // Send a POST request to the /api/sendEmail endpoint
+                      const response = await fetch('http://localhost:5000/api/sendEmail', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                      });
+                
+                      // Check if the response is JSON
+                      const contentType = response.headers.get('content-type');
+                      if (!contentType || !contentType.includes('application/json')) {
+                        // If the response is not JSON, display an error
+                        const htmlResponse = await response.text();
+                        console.error('Non-JSON response received:', htmlResponse);
+                        messageDiv.innerHTML = `<p class="error">An unexpected error occurred. Please try again later.</p>`;
+                        return;
+                      }
+                
+                      // Parse the JSON response
+                      const result = await response.json();
+                
+                      if (response.ok) {
+                        // Display success message
+                        messageDiv.innerHTML = `<p class="success">${result.message}</p>`;
+                        form.reset(); // Clear the form
+                      } else {
+                        // Display error message
+                        messageDiv.innerHTML = `<p class="error">${result.error || 'An unexpected error occurred.'}</p>`;
+                      }
+                    } catch (error) {
+                      console.error(error);
+                      messageDiv.innerHTML = `<p class="error">Failed to submit the form. Please try again later.</p>`;
+                    }
+                  });
+                });
+                </script>
+       
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <!-- <i class="fas fa-chart-line"></i> -->
+                    <span>GreenStoneInvestment</span>
+                </div>
+                <p class="hero-slogan">"SIP karo, sapno ko sach karo"</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="mutual-funds.html">Mutual Funds</a></li>
+                    <li><a href="calculator.html">Calculator</a></li>
+
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 301 Vinayak apt, MG road , Kandivali (w), Mumbai 400067</li>
+                    <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                    <li><i class="fas fa-envelope"></i> info@GreenStoneInvestment.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 GreenStoneInvestment. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
