@@ -36,7 +36,7 @@ module.exports = async (req, res) => {
     // Set up email details
     const mailOptions = {
       from: email,
-      to: 'govid.kotecha@gmail.com',
+      to: 'govind.kotecha@gmail.com',
       subject: `New Investment Inquiry from ${name}`,
       text: `
         Name: ${name}
