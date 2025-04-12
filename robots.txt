@@ -1,0 +1,6 @@
+# Allow all bots to crawl the site
+User-agent: *
+Allow: /
+
+# Specify the location of the sitemap
+Sitemap: https://green-stone-investment.vercel.app/sitemap.xml
