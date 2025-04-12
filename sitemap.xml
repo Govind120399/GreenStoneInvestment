@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://green-stone-investment.vercel.app//index.html</loc>
+    <lastmod>2023-10-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Calculator Page -->
+  <url>
+    <loc>https://green-stone-investment.vercel.app//calculator.html</loc>
+    <lastmod>2023-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Mutual Funds Page -->
+  <url>
+    <loc>https://green-stone-investment.vercel.app//mutual-funds.html</loc>
+    <lastmod>2023-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- SIP Calculator Page -->
+  <url>
+    <loc>https://green-stone-investment.vercel.app//sip-calculator.html</loc>
+    <lastmod>2023-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Step-Up Calculator Page -->
+  <url>
+    <loc>https://green-stone-investment.vercel.app//step-up-calc.html</loc>
+    <lastmod>2023-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- SWP Calculator Page -->
+  <url>
+    <loc>https://green-stone-investment.vercel.app//swp-calc.html</loc>
+    <lastmod>2023-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
