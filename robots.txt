@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Specify the location of the sitemap
-Sitemap: https://green-stone-investment.vercel.app/sitemap.xml
+Sitemap: https://www.greenstone-investment.com/sitemap.xml
