@@ -1705,3 +1705,47 @@ li {
   padding: 1rem;
   box-shadow: var(--box-shadow);
 }
+.calculator-container.dream-home {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.input-section-only {
+  flex: 1;
+  min-width: 300px;
+}
+
+.form-control {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.result {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.results-section {
+  margin-top: 2rem;
+}

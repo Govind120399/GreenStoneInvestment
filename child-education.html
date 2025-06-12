@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Child Education Investment Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">   
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<!-- Header -->
+<header class="sticky-header">
+    <nav>
+        <div class="logo">
+            <a href="/">
+                <img src="images/logo.png" alt="Website Logo" />
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="mutual-funds" class="active">Mutual Funds</a></li>
+            <li><a href="/#contact">Plan Now</a></li>
+            <li><a href="calculator">Calculator</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+</header>
+
+<main>
+  <section class="calculator">
+    <h1>Child Education Investment Calculator</h1>
+    <div class="calculator-container dream-home">
+
+      <!-- Input Section Only -->
+      <div class="input-section-only">
+        <div class="input-card">
+
+          <p>How much do you need to save monthly to fund your child’s education? Calculate the amount using our Child Education Planner.</p>
+          <hr />
+
+          <!-- Age Inputs -->
+          <div class="form-group row">
+            <div class="col-md-6">
+              <label>Current Age of Child:</label>
+              <select id="currentAge" class="form-control">
+                <!-- Populated by JS -->
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label>Age When Child Will Go for Higher Education:</label>
+              <select id="higherEducationAge" class="form-control">
+                <!-- Populated by JS -->
+              </select>
+            </div>
+          </div>
+
+          <!-- Return & Cost -->
+          <div class="form-group row">
+            <div class="col-md-6">
+              <label>Expected Annual Rate Of Return (P.A)</label>
+              <input type="number" id="returnRate" value="10" min="1" max="30" class="form-control" />
+            </div>
+            <div class="col-md-6">
+              <label>Present Cost of Higher Education</label>
+              <input type="number" id="presentCost" value="2500000" min="10000" class="form-control" />
+            </div>
+          </div>
+
+          <!-- Result Buttons -->
+          <div class="form-group text-center">
+            <button type="button" onclick="calculate()" class="btn btn-primary btn-lg">Plan My Child Education</button>
+          </div>
+
+          <!-- Results -->
+          <div class="results-section mt-4">
+            <div class="result">
+              <strong>Monthly Investment Required:</strong>
+              <span id="monthlyInvestmentRequired">₹11,783.73</span>
+            </div>
+            <div class="result">
+              <strong>Cost of Education After <span id="yearsUntil">18</span> Years:</strong>
+              <span id="futureCost">₹71,35,847.88</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Right Side - Chart -->
+      <div class="chart-card">
+        <canvas id="childEducationChart" width="400" height="200"></canvas>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-about">
+            <div class="footer-logo">
+                <span>GreenStone Investment</span>
+            </div>
+            <p class="hero-slogan">"SIP karo, sapno ko sach karo"</p>
+            <!-- <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div> -->
+        </div>
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="mutual-funds">Mutual Funds</a></li>
+                <li><a href="calculator">Calculator</a></li>
+                <li><a href="https://www.tradedeltaacademy.in/" target="_blank" rel="noopener noreferrer">Learn with us</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i>301 Vinayak apt, MG road , Kandivali (w), Mumbai 400067</li>
+                <li><i class="fas fa-phone"></i> +91 9029619573 / +91 9987291044</li>
+                <li><i class="fas fa-envelope"></i> greenstoneinvestments1@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 GreenStone Investment. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+<script src="js/child-education.js"></script>
+</body>
+</html>
