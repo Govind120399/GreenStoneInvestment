@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dream Home SIP Calculator</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> 
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav>
+    <div class="logo">
+      <a href="/"><img src="images/logo.png" alt="Logo" /></a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="mutual-funds">Mutual Funds</a></li>
+      <li><a href="/#contact">Plan Now</a></li>
+      <li><a href="calculator">Calculator</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Main Content -->
+<main>
+  <section class="calculator">
+    <h1>Calculator for Dream Home</h1>
+    <div class="calculator-container dream-home">
+
+      <!-- Input Section Only -->
+      <div class="input-section-only">
+        <div class="input-card">
+
+          <!-- Cost of House -->
+          <div class="input-group">
+            <label>The current cost of my dream home is</label>
+            <div class="slider-input">
+              <span>₹</span>
+              <input type="number" id="homeCost" value="5000000" min="5000" max="50000000" step="500">
+              <input type="range" id="homeCostSlider" min="5000" max="50000000" step="500" value="5000000">
+            </div>
+          </div>
+
+          <!-- Time Period -->
+          <div class="input-group">
+            <label>I want to buy my dream home in</label>
+            <div class="slider-input">
+              <input type="number" id="yearsToSave" value="5" min="1" max="40">
+              <span>Years</span>
+              <input type="range" id="yearsToSaveSlider" min="1" max="40" value="5">
+            </div>
+          </div>
+
+          <!-- Current Investment -->
+          <div class="input-group">
+            <label>Amount I can invest today</label>
+            <div class="slider-input">
+              <span>₹</span>
+              <input type="number" id="currentInvestment" value="1500000" min="0" max="9000000" step="500">
+              <input type="range" id="currentInvestmentSlider" min="0" max="9000000" step="500" value="1500000">
+            </div>
+          </div>
+
+          <!-- Results -->
+          <div class="results-section">
+            <p>
+              For your dream home, you will require a corpus of 
+              <strong id="requiredCorpus">₹73.64 Lakhs</strong> in 
+              <span id="displayYears">5 years</span>. 
+              Your current investment of ₹<span id="displayCurrentInvestment">15.00 Lakhs</span> may appreciate to 
+              <strong id="futureValue">₹19.92 Lakhs</strong> assuming 
+              <span id="returnRateDisplay">8%</span> rate of return.
+            </p>
+          </div>
+
+          <!-- SIP vs Lumpsum -->
+          <div class="investment-options">
+            <div class="sip-option">
+              <div class="amount">SIP: ₹<span id="sipAmount">77,309</span></div>
+              <a href="sip-calculator" class="cta-button primary btn-sm">Start Now <i class="fas fa-play"></i></a>
+            </div>
+            <div class="or">OR</div>
+            <div class="lumpsum-option">
+              <div class="amount">Lumpsum: ₹<span id="lumpsumAmount">40,44,443</span></div>
+              <a href="lumpsum-calculator" class="cta-button primary btn-sm">Start Now <i class="fas fa-play"></i></a>
+            </div>
+          </div>
+
+          <!-- Assumptions -->
+          <div class="assumptions">
+            <p>
+              Based on an assumed rate of return(s) of 
+              <select id="returnRateSelect">
+                <option>6</option>
+                <option selected>8</option>
+                <option>10</option>
+                <option>12</option>
+              </select>% and inflation rate of 
+              <select id="inflationRateSelect">
+                <option selected>6</option>
+                <option>4</option>
+                <option>5</option>
+                <option>7</option>
+              </select>%
+            </p>
+
+              The above investment simulation is for illustration purposes only and does not guarantee returns. Please consult a financial advisor before making any investment decisions.
+          </div>
+
+        </div>
+      </div>
+        <!-- Chart Card -->
+  <div class="chart-card">
+    <canvas id="dreamHomeChart" width="400" height="200"></canvas>
+  </div>
+</div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+      <div class="footer-about">
+          <div class="footer-logo">
+              <span>GreenStone Investment</span>
+          </div>
+          <p class="hero-slogan">"SIP karo, sapno ko sach karo"</p>
+          <!-- <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+          </div> -->
+      </div>
+      <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="mutual-funds">Mutual Funds</a></li>
+              <li><a href="calculator">Calculator</a></li>
+              <li><a href="https://www.tradedeltaacademy.in/" target="_blank" rel="noopener noreferrer">Learn with us</a></li>
+          </ul>
+      </div>
+      <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <ul>
+              <li><i class="fas fa-map-marker-alt"></i>301 Vinayak apt, MG road , Kandivali (w), Mumbai 400067</li>
+              <li><i class="fas fa-phone"></i> +91 9029619573 / +91 9987291044</li>
+              <li><i class="fas fa-envelope"></i> greenstoneinvestments1@gmail.com</li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p>&copy; 2023 GreenStone Investment. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/dream-home.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</body>
+</html>
