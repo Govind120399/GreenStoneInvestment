@@ -32,43 +32,44 @@ document.addEventListener("DOMContentLoaded", () => {
     syncInputs(timePeriodInput, timePeriodSlider);
 
     // Calculate SWP results
-    function calculateSWP() {
-        const initialInvestment = parseFloat(initialInvestmentInput.value);
-        const monthlyWithdrawal = parseFloat(monthlyWithdrawalInput.value);
-        const expectedReturn = parseFloat(expectedReturnInput.value) / 100;
-        const timePeriod = parseInt(timePeriodInput.value);
+function calculateSWP() {
+    const initialInvestment = parseFloat(initialInvestmentInput.value);
+    const monthlyWithdrawal = parseFloat(monthlyWithdrawalInput.value);
+    const expectedReturn = parseFloat(expectedReturnInput.value) / 100;
+    const timePeriod = parseInt(timePeriodInput.value);
 
-        let balance = initialInvestment;
-        let totalWithdrawn = 0;
-        let totalInterestEarned = 0;
+    let balance = initialInvestment;
+    let totalWithdrawn = 0;
+    let totalInterestEarned = 0;
 
-        for (let i = 0; i < timePeriod * 12; i++) {
-            // Apply monthly return (interest)
-            const monthlyInterest = balance * (expectedReturn / 12);
-            totalInterestEarned += monthlyInterest;
-            balance += monthlyInterest;
+    for (let i = 0; i < timePeriod * 12; i++) {
+        // Step 1: Apply return first (on current balance)
+        const monthlyInterest = balance * (expectedReturn / 12);
+        totalInterestEarned += monthlyInterest;
+        balance += monthlyInterest;
 
-            // Deduct monthly withdrawal
-            balance -= monthlyWithdrawal;
-            totalWithdrawn += monthlyWithdrawal;
-
-            if (balance <= 0) {
-                break;
-            }
-        }
-
-        const remainingBalance = Math.max(0, balance);
-        const remainingInvestment = Math.max(0, initialInvestment - totalWithdrawn );
-
-        // Update results
-        totalWithdrawnDisplay.textContent = `₹${totalWithdrawn.toLocaleString()}`;
-        remainingBalanceDisplay.textContent = `₹${remainingBalance.toLocaleString()}`;
-        remainingInvestmentDisplay.textContent = `₹${remainingInvestment.toLocaleString()}`;
-        totalInterestDisplay.textContent = `₹${totalInterestEarned.toLocaleString()}`;
-
-        // Update chart
-        updateChart(totalWithdrawn, remainingBalance);
+        // Step 2: Deduct withdrawal
+        balance -= monthlyWithdrawal;
+        totalWithdrawn += monthlyWithdrawal;
     }
+
+    // Format results
+    const remainingBalance = balance; // Can be negative
+    const remainingInvestment = Math.max(0, balance); // Only show positive part
+    const formattedRemainingBalance = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(remainingBalance);
+    const formattedTotalWithdrawn = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(totalWithdrawn);
+    const formattedRemainingInvestment = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(remainingInvestment);
+    const formattedTotalInterest = new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(totalInterestEarned);
+
+    // Update DOM
+    totalWithdrawnDisplay.textContent = formattedTotalWithdrawn;
+    remainingBalanceDisplay.innerHTML = `<span style="color:${remainingBalance < 0 ? 'red' : 'inherit'}">${formattedRemainingBalance}</span>`;
+    remainingInvestmentDisplay.textContent = formattedRemainingInvestment;
+    totalInterestDisplay.textContent = formattedTotalInterest;
+
+    // Update chart
+    updateChart(totalWithdrawn, Math.max(0, balance));
+}
 
     // Update chart
     const ctx = document.getElementById("swpChart").getContext("2d");

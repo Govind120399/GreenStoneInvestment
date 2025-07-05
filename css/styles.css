@@ -244,7 +244,7 @@
   
   /* Features Section */
   .features {
-    padding: 5rem 0;
+    padding: 60px 20px;
     background-color: var(--white);
   }
   
@@ -265,9 +265,11 @@
   
   .features-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 .feature-card {
   background-color: var(--light-color);
@@ -323,15 +325,17 @@
 }
   /* Fund Categories */
   .fund-categories {
-    /* padding: 5rem 0; */
+    padding: 60px 20px;
     background-color: var(--light-color);
   }
   
   .category-tiles {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
   
   .category-tile {
@@ -412,16 +416,17 @@
   
   /* Testimonials */
   .testimonials {
-    padding: 5rem 0;
+    padding: 60px 20px;
     background-color: var(--white);
   }
   
   .testimonial-slider {
-    display: flex;
-    gap: 2rem;
-    overflow-x: auto;
-    padding: 2rem 0;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
   }
   
   .testimonial-card {
