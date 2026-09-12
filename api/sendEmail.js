@@ -1,86 +1,96 @@
 const nodemailer = require('nodemailer');
 
-// Handler function for the /api/sendEmail route
 module.exports = async (req, res) => {
 
-  // Allow CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // Handle preflight requests
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
-  // Reject unsupported HTTP methods
   if (req.method !== 'POST') {
     return res.status(405).json({
       error: 'Method Not Allowed'
     });
   }
 
-  // Get new form fields
-  const {
-    name,
-    email,
-    phone,
-    investmentType,
-    investmentAmount,
-    investmentDuration,
-    discussionDate,
-    discussionTime
-  } = req.body;
+  try {
 
-  // Validate required fields
-  if (
-    !name ||
-    !email ||
-    !phone ||
-    !investmentType ||
-    !investmentAmount ||
-    !investmentDuration ||
-    !discussionDate ||
-    !discussionTime
-  ) {
-    return res.status(400).json({
-      error: 'Please fill out all required fields.'
-    });
-  }
+    const {
+      name,
+      email,
+      phone,
+      investmentType,
+      investmentAmount,
+      investmentDuration,
+      discussionDate,
+      discussionTime
+    } = req.body || {};
 
-  // Convert values into nicer text
-  const formattedInvestmentType =
-    investmentType === 'sip' ? 'SIP' : 'Lump Sum';
-
-  // Configure Nodemailer transporter
-  const transporter = nodemailer.createTransport({
-    service: 'gmail',
-
-    auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-    },
-
-    tls: {
-      rejectUnauthorized: false
+    if (
+      !name ||
+      !email ||
+      !phone ||
+      !investmentType ||
+      !investmentAmount ||
+      !investmentDuration ||
+      !discussionDate ||
+      !discussionTime
+    ) {
+      return res.status(400).json({
+        error: 'Please fill out all required fields.'
+      });
     }
-  });
 
-  // Set up email details
-  const mailOptions = {
+    /*
+     * Make sure the environment variables actually exist
+     * without exposing their values.
+     */
+    console.log('EMAIL CONFIG CHECK:', {
+      EMAIL_USER_EXISTS: Boolean(process.env.EMAIL_USER),
+      EMAIL_PASS_EXISTS: Boolean(process.env.EMAIL_PASS)
+    });
 
-    // Send from your authenticated Gmail account
-    from: process.env.EMAIL_USER,
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      throw new Error('EMAIL_USER or EMAIL_PASS environment variable is missing.');
+    }
 
-    // Where the enquiry should be received
-    to: 'greenstoneinvestments1@gmail.com',
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
 
-    // Customer email can be used when replying
-    replyTo: email,
+      auth: {
+        user: process.env.EMAIL_USER,
 
-    subject: `New Investment Inquiry from ${name}`,
+        // Gmail App Passwords are sometimes copied with spaces.
+        pass: process.env.EMAIL_PASS.replace(/\s/g, '')
+      }
+    });
 
-    text: `
+    /*
+     * Test Gmail authentication before attempting to send.
+     */
+    await transporter.verify();
+
+    console.log('Gmail SMTP authentication successful');
+
+    const formattedInvestmentType =
+      investmentType === 'sip'
+        ? 'SIP'
+        : 'Lump Sum';
+
+    const mailOptions = {
+
+      from: `"GreenStone Investment" <${process.env.EMAIL_USER}>`,
+
+      to: 'greenstoneinvestments1@gmail.com',
+
+      replyTo: email,
+
+      subject: `New Investment Inquiry from ${name}`,
+
+      text: `
 New Investment Inquiry
 
 Personal Details
@@ -99,13 +109,12 @@ Preferred Discussion
 -------------------------
 Date: ${discussionDate}
 Time: ${discussionTime}
-    `
-  };
+      `
+    };
 
-  // Send email
-  try {
+    const info = await transporter.sendMail(mailOptions);
 
-    await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully:', info.messageId);
 
     return res.status(200).json({
       message: `Thank you, ${name}! Your request has been submitted successfully.`
@@ -113,11 +122,23 @@ Time: ${discussionTime}
 
   } catch (error) {
 
-    console.error('Email sending error:', error);
-
-    return res.status(500).json({
-      error: 'Unable to send the email. Please try again later.'
+    console.error('EMAIL ERROR:', {
+      message: error.message,
+      code: error.code,
+      command: error.command,
+      response: error.response,
+      responseCode: error.responseCode
     });
 
+    /*
+     * TEMPORARY debugging response.
+     * Once fixed, replace this with a generic error message.
+     */
+    return res.status(500).json({
+      error: error.message,
+      code: error.code || null,
+      command: error.command || null,
+      response: error.response || null
+    });
   }
 };
