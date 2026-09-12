@@ -57,8 +57,8 @@ module.exports = async (req, res) => {
     service: 'gmail',
 
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_APP_PASSWORD
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
     },
 
     tls: {
@@ -70,7 +70,7 @@ module.exports = async (req, res) => {
   const mailOptions = {
 
     // Send from your authenticated Gmail account
-    from: process.env.GMAIL_USER,
+    from: process.env.EMAIL_USER,
 
     // Where the enquiry should be received
     to: 'greenstoneinvestments1@gmail.com',
