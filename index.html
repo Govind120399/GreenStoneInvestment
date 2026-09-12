@@ -299,116 +299,371 @@
           </section>
           
           <section id="contact" class="contact-section">
-            <div class="container">
-                <h2 class="section-title">Begin Your Investment Journey</h2>
-                <p class="section-intro">Request course information or schedule a consultation with our admissions team</p>
-                
-                <section>
-                  <form id="contact-form" action="/api/sendEmail" method="POST" class="contact-form">
-                    <div class="form-group">
-                      <label for="name">Full Name</label>
-                      <input type="text" id="name" name="name" required placeholder="Enter your name">
-                    </div>
-                    <div class="form-group">
-                      <label for="email">Email Address</label>
-                      <input type="email" id="email" name="email" required placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                      <label for="phone">Phone Number</label>
-                      <input type="tel" id="phone" name="phone" required placeholder="Enter your phone">
-                    </div>
-                    <div class="form-group">
-                      <label for="interest">Primary Interest</label>
-                      <select id="interest" name="interest" required>
-                        <option value="">Select an option</option>
-                        <option value="financial-literacy">Free Portfolio Analysis</option>
-                        <option value="chart-analysis">SIP Consultation</option>
-                        <option value="basics-for-delta">SWP Consultation</option>
-                        <option value="delta-trading-pro">Retirement Planning</option>
-                        <option value="mutual-funds">Lump Sum Investment</option>
-                        <option value="consultation">Free Consultation</option>
-                        <option value="other">Other Inquiry</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="experience">Current Investment Experience</label>
-                      <select id="experience" name="experience">
-                        <option value="">Select your level</option>
-                        <option value="beginner">Beginner (just starting)</option>
-                        <option value="intermediate">Intermediate (some experience)</option>
-                        <option value="advanced">Advanced (experienced investor)</option>
-                      </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="message">Your Message</label>
-                      <textarea id="message" name="message" placeholder="Tell us about your investment goals and any questions"></textarea>
-                    </div>
-                    <div class="form-submit">
-                      <button type="submit" class="btn btn-accent">Submit Request</button>
-                    </div>
-                  </form>
-                
-                  <!-- Placeholder for success/error messages -->
-                  <div id="form-message"></div>
-                </section>
+  <div class="container">
+    <h2 class="section-title">Begin Your Investment Journey</h2>
+    <p class="section-intro">
+      Share a few details about your investment goals and our team will get in touch with you.
+    </p>
+
+    <section>
+      <form id="contact-form" action="/api/sendEmail" method="POST" class="contact-form">
+
+        <!-- Personal Details -->
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Enter your full name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Contact Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            required
+            placeholder="Enter your contact number"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter your email address"
+          >
+        </div>
+
+        <!-- Investment Type -->
+        <div class="form-group">
+          <label for="investmentType">
+            What type of investment are you mainly looking for?
+          </label>
+
+          <select id="investmentType" name="investmentType" required>
+            <option value="">Select investment type</option>
+            <option value="sip">SIP</option>
+            <option value="lump-sum">Lump Sum</option>
+          </select>
+        </div>
+
+        <!-- Investment Amount -->
+        <div class="form-group">
+          <label for="investmentAmount">
+            Approximately how much are you planning to invest?
+          </label>
+
+          <select
+            id="investmentAmount"
+            name="investmentAmount"
+            required
+            disabled
+          >
+            <option value="">Select investment type first</option>
+          </select>
+        </div>
+
+        <!-- Investment Duration -->
+        <div class="form-group">
+          <label for="investmentDuration">
+            What is your expected investment time?
+          </label>
+
+          <select
+            id="investmentDuration"
+            name="investmentDuration"
+            required
+          >
+            <option value="">Select investment duration</option>
+            <option value="below-5-years">Below 5 Years</option>
+            <option value="5-10-years">5 - 10 Years</option>
+            <option value="10-15-years">10 - 15 Years</option>
+            <option value="15-20-years">15 - 20 Years</option>
+            <option value="20-plus-years">20+ Years</option>
+          </select>
+        </div>
+
+        <!-- Preferred Discussion Date -->
+<div class="form-group">
+  <label for="discussionDate">
+    What date would be convenient for a quick discussion?
+  </label>
+
+  <input
+    type="date"
+    id="discussionDate"
+    name="discussionDate"
+    required
+  >
+</div>
+
+<!-- Preferred Discussion Time -->
+<div class="form-group">
+  <label for="discussionTime">
+    What time would be convenient for a quick discussion?
+  </label>
+
+  <input
+    type="time"
+    id="discussionTime"
+    name="discussionTime"
+    required
+  >
+</div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-accent">
+            Submit Request
+          </button>
+        </div>
+
+      </form>
+
+      <div id="form-message"></div>
+    </section>
+  </div>
+</section>
                 
                 <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                  const form = document.getElementById('contact-form');
-                  const messageDiv = document.getElementById('form-message');
-                
-                  form.addEventListener('submit', async (event) => {
-                    event.preventDefault(); // Prevent the default form submission
-                
-                    // Get form data
-                    const formData = new FormData(form);
-                    const data = {
-                      name: formData.get('name'),
-                      email: formData.get('email'),
-                      phone: formData.get('phone'),
-                      interest: formData.get('interest'),
-                      experience: formData.get('experience'),
-                      message: formData.get('message')
-                    };
-                
-                    try {
-                      // Send a POST request to the /api/sendEmail endpoint
-                      const response = await fetch('/api/sendEmail', {
-                        method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                      });
-                
-                      // Check if the response is JSON
-                      const contentType = response.headers.get('content-type');
-                      if (!contentType || !contentType.includes('application/json')) {
-                        // If the response is not JSON, display an error
-                        const htmlResponse = await response.text();
-                        console.error('Non-JSON response received:', htmlResponse);
-                        messageDiv.innerHTML = `<p class="error">An unexpected error occurred. Please try again later.</p>`;
-                        return;
-                      }
-                
-                      // Parse the JSON response
-                      const result = await response.json();
-                
-                      if (response.ok) {
-                        // Display success message
-                        messageDiv.innerHTML = `<p class="success">${result.message}</p>`;
-                        form.reset(); // Clear the form
-                      } else {
-                        // Display error message
-                        messageDiv.innerHTML = `<p class="error">${result.error || 'An unexpected error occurred.'}</p>`;
-                      }
-                    } catch (error) {
-                      console.error(error);
-                      messageDiv.innerHTML = `<p class="error">Failed to submit the form. Please try again later.</p>`;
-                    }
-                  });
-                });
-                </script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const form = document.getElementById('contact-form');
+  const messageDiv = document.getElementById('form-message');
+
+  const investmentType = document.getElementById('investmentType');
+  const investmentAmount = document.getElementById('investmentAmount');
+
+
+  /* -----------------------------
+     Investment Amount Options
+  ----------------------------- */
+
+  const lumpSumOptions = [
+    {
+      value: '1-5-lakh',
+      text: '₹1 Lakh - ₹5 Lakh'
+    },
+    {
+      value: '5-10-lakh',
+      text: '₹5 Lakh - ₹10 Lakh'
+    },
+    {
+      value: '10-15-lakh',
+      text: '₹10 Lakh - ₹15 Lakh'
+    },
+    {
+      value: '15-20-lakh',
+      text: '₹15 Lakh - ₹20 Lakh'
+    },
+    {
+      value: '20-lakh-plus',
+      text: '₹20 Lakh & Above'
+    }
+  ];
+
+
+  const sipOptions = [
+    {
+      value: '100-10000',
+      text: '₹100 - ₹10,000 per month'
+    },
+    {
+      value: '10000-20000',
+      text: '₹10,000 - ₹20,000 per month'
+    },
+    {
+      value: '20000-30000',
+      text: '₹20,000 - ₹30,000 per month'
+    },
+    {
+      value: '30000-50000',
+      text: '₹30,000 - ₹50,000 per month'
+    },
+    {
+      value: '50000-plus',
+      text: '₹50,000 & Above per month'
+    }
+  ];
+
+
+  /* -----------------------------
+     Change Amount Based On Type
+  ----------------------------- */
+
+  investmentType.addEventListener('change', () => {
+
+    investmentAmount.innerHTML =
+      '<option value="">Select investment amount</option>';
+
+    let options = [];
+
+
+    if (investmentType.value === 'sip') {
+      options = sipOptions;
+    }
+
+
+    if (investmentType.value === 'lump-sum') {
+      options = lumpSumOptions;
+    }
+
+
+    if (!investmentType.value) {
+
+      investmentAmount.innerHTML =
+        '<option value="">Select investment type first</option>';
+
+      investmentAmount.disabled = true;
+
+      return;
+    }
+
+
+    options.forEach(optionData => {
+
+      const option = document.createElement('option');
+
+      option.value = optionData.value;
+      option.textContent = optionData.text;
+
+      investmentAmount.appendChild(option);
+
+    });
+
+
+    investmentAmount.disabled = false;
+
+  });
+
+
+  /* -----------------------------
+     Form Submit
+  ----------------------------- */
+
+  form.addEventListener('submit', async (event) => {
+
+    event.preventDefault();
+
+    messageDiv.innerHTML = '';
+
+
+    const formData = new FormData(form);
+
+const discussionDate = document.getElementById('discussionDate');
+
+const today = new Date();
+const year = today.getFullYear();
+const month = String(today.getMonth() + 1).padStart(2, '0');
+const day = String(today.getDate()).padStart(2, '0');
+
+discussionDate.min = `${year}-${month}-${day}`;
+    const data = {
+
+      name: formData.get('name'),
+
+      phone: formData.get('phone'),
+
+      email: formData.get('email'),
+
+      investmentType: formData.get('investmentType'),
+
+      investmentAmount: formData.get('investmentAmount'),
+
+      investmentDuration: formData.get('investmentDuration'),
+
+      discussionDate: formData.get('discussionDate'),
+
+      discussionTime: formData.get('discussionTime')
+
+    };
+
+
+    try {
+
+      const response = await fetch('/api/sendEmail', {
+
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify(data)
+
+      });
+
+
+      const contentType = response.headers.get('content-type');
+
+
+      if (
+        !contentType ||
+        !contentType.includes('application/json')
+      ) {
+
+        const htmlResponse = await response.text();
+
+        console.error(
+          'Non-JSON response received:',
+          htmlResponse
+        );
+
+
+        messageDiv.innerHTML =
+          '<p class="error">An unexpected error occurred. Please try again later.</p>';
+
+        return;
+
+      }
+
+
+      const result = await response.json();
+
+
+      if (response.ok) {
+
+        messageDiv.innerHTML =
+          `<p class="success">${result.message || 'Thank you. Your request has been submitted successfully.'}</p>`;
+
+
+        form.reset();
+
+
+        investmentAmount.innerHTML =
+          '<option value="">Select investment type first</option>';
+
+        investmentAmount.disabled = true;
+
+      } else {
+
+        messageDiv.innerHTML =
+          `<p class="error">${result.error || 'An unexpected error occurred.'}</p>`;
+
+      }
+
+
+    } catch (error) {
+
+      console.error(error);
+
+
+      messageDiv.innerHTML =
+        '<p class="error">Failed to submit the form. Please try again later.</p>';
+
+    }
+
+  });
+
+});
+</script>
        
     </main>
 
